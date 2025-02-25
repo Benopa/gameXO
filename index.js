@@ -1,10 +1,9 @@
 const container = document.getElementById('buttonsContainer');
 let activeButton = null;
-const field = [];
-for (let j = 0; j <=3; j++) {
-    field.push()
-}
-for ( let i = 0; i <= 9; i++) {
+const gameBord = [];
+const gameString = [];
+for (let j = 0; j <= 2; j++) {
+    for ( let i = 0; i <= 2; i++) {
     let button = document.createElement('button');
     button.textContent = `Поле ${i}`;
     button.classList.add('btn', 'button');
@@ -20,8 +19,13 @@ for ( let i = 0; i <= 9; i++) {
         button.classList.add('btn-success');
         button.textContent = '0';
         activeButton = button;
+    gameString = gameString.push(activeButton[i]);
     })
     container.appendChild(button); 
+    }
+
+    gameBord = gameBord.push(gameString[j]);
+
 }
+
 container.style.fontSize = "100px";
-container.style.setProperty('100px');
