@@ -19,12 +19,12 @@ for (let j = 0; j <= 2; j++) {
         button.classList.add('btn-success');
         button.textContent = '0';
         activeButton = button;
-    gameString = gameString.push(activeButton[i]);
+    gameString.push(activeButton[i]);
     })
     container.appendChild(button); 
     }
 
-    gameBord = gameBord.push(gameString[j]);
+    gameBord.push(gameString[j]);
 
 }
 
