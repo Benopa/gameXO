@@ -1,5 +1,5 @@
 const container = document.getElementById('buttonsContainer');
-let activeButton = null;
+let hod = 0;
 const gameBord = [];
 const gameString = [];
 for (let j = 0; j <= 2; j++) {
@@ -8,19 +8,25 @@ for (let j = 0; j <= 2; j++) {
     button.textContent = `Поле ${i}`;
     button.classList.add('btn', 'button');
     button.addEventListener('click', () => {
-        if ( activeButton === button) {
-            activeButton.classList.remove('btn-success');
-            activeButton.classList.add('btn-danger');
+        if (hod % 2 == 0) {
             button.textContent = 'X';
-            activeButton = null;
-            return;
+            button.classList.remove('btn-success');
+            button.classList.add('btn-danger');
+        } else {
+            button.textContent = '0';
+            button.classList.remove('btn-danger');
+            button.classList.add('btn-success');
         }
-        button.classList.remove('btn-danger');
-        button.classList.add('btn-success');
-        button.textContent = '0';
-        activeButton = button;
+        hod++;
+        button.setAttribute('disabled', '');
+
+        
+
+        
+        
     gameString.push(activeButton[i]);
-    })
+    });
+    // button.removeEventListener( 'click', () => ());
     container.appendChild(button); 
     }
 
